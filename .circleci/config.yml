@@ -24,6 +24,14 @@ jobs:
           command: bash setup2.sh
           no_output_timeout: 8h
       - run:
+          name: get device source
+          no_output_timeout: 8h
+          command: https://raw.githubusercontent.com/Ankits-lab/trail/main/device.sh
+      - run:
+          name: clone device source
+          command: bash device.sh
+          no_output_timeout: 8h
+      - run:
           name: get android sources 
           command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh
           no_output_timeout: 8h
@@ -32,19 +40,14 @@ jobs:
           command: bash lunch.sh
           no_output_timeout: 8h
       - run:
-          name: mb
-          no_output_timeout: 8h
-          command: make bacon
-      - run:
           name: get copy upload script
           command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
           no_output_timeout: 8h
       - run:
           name: copy output to different location
           command: bash copy.sh
-          no_output_timeout: 8h
-           
-        
+          no_output_timeout: 8h       
+
 workflows:
   version: 2.1
   cooking:
