@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd mywork/aosp
 echo starting clonning 
 git clone https://github.com/keneankit01/hycon_PL2.git device/nokia/PL2
