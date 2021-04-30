@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 mkdir mywork
 cd mywork
+apt-get update
+apt-get install sudo -y
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt install -y git git-core
