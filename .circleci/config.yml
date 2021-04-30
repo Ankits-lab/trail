@@ -1,0 +1,41 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: mrkhan007/aosp:latest 
+   steps:
+      -run:
+        name: get basic setup
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh  
+      -run:
+        name: build basic setup
+        command: bash setup.sh
+      -run:
+        name: get android setup
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup2.sh  
+      -run:
+        name: build android setup
+        command: bash setup2.sh
+      -run:
+        name: get android sources 
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
+      -run:
+        name: lunch android source
+        command: bash lunch.sh
+      -run:
+        name: 
+           no_output_timeout: 120m
+        command: make bacon
+      -run:
+        name: get copy upload script
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
+      -run:
+        name: copy output to different location
+        command: bash copy.sh
+           
+        
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
