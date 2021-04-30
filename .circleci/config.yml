@@ -2,36 +2,47 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: mrkhan007/aosp:latest 
+      - image: ubuntu:20.04 
    steps:
-      -run:
-        name: get basic setup
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh  
-      -run:
-        name: build basic setup
-        command: bash setup.sh
-      -run:
-        name: get android setup
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup2.sh  
-      -run:
-        name: build android setup
-        command: bash setup2.sh
-      -run:
-        name: get android sources 
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
-      -run:
-        name: lunch android source
-        command: bash lunch.sh
-      -run:
-        name: 
-           no_output_timeout: 120m
-        command: make bacon
-      -run:
-        name: get copy upload script
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
-      -run:
-        name: copy output to different location
-        command: bash copy.sh
+      - run:
+          name: OS setup 
+          command: export DEBIAN_FRONTEND=noninteractive; export TZ=Asia/Kolkata; apt -qq update --fix-missing; apt -qq install -y git wget make
+      - run:
+          name: get basic setup
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh
+          no_output_timeout: 8h
+      - run:
+          name: build basic setup
+          command: bash setup.sh
+          no_output_timeout: 8h
+      - run:
+          name: get android setup
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup2.sh
+          no_output_timeout: 8h
+      - run:
+          name: build android setup
+          command: bash setup2.sh
+          no_output_timeout: 8h
+      - run:
+          name: get android sources 
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh
+          no_output_timeout: 8h
+      - run:
+          name: lunch android source
+          command: bash lunch.sh
+          no_output_timeout: 8h
+      - run:
+          name: mb
+          no_output_timeout: 8h
+          command: make bacon
+      - run:
+          name: get copy upload script
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
+          no_output_timeout: 8h
+      - run:
+          name: copy output to different location
+          command: bash copy.sh
+          no_output_timeout: 8h
            
         
 workflows:
