@@ -3,8 +3,8 @@
 echo -e "number of cores?"
 nproc --all
 cd mywork
-mkdir hycon 
-cd hycon
+mkdir asop 
+cd aosp
 apt install -y curl
 echo "setting time"
 apt-get update && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata
