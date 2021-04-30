@@ -2,7 +2,8 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: ubuntu:20.04 
+      - image: ubuntu:20.04
+        resource_class: 2xlarge+(2)
    steps:
       - run:
           name: OS setup 
