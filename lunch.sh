@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 source build/envsetup.sh
 lunch aosp_PL2-userdebug
 export SKIP_API_CHECKS=true
