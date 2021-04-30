@@ -5,9 +5,6 @@ jobs:
       - image: ubuntu:20.04 
    steps:
       - run:
-          name: install wget
-          command: apt install wget
-      - run:
           name: get basic setup
           command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh
       - run:
