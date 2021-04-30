@@ -5,6 +5,9 @@ jobs:
       - image: ubuntu:20.04 
    steps:
       - run:
+          name: OS setup 
+          command: export DEBIAN_FRONTEND=noninteractive; export TZ=Asia/Kolkata; apt -qq update --fix-missing; apt -qq install -y git wget make
+      - run:
           name: get basic setup
           command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh
       - run:
