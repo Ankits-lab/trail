@@ -6,32 +6,40 @@ jobs:
    steps:
       -run:
         name: get basic setup
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh  
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh
+        no_output_timeout: 3h
       -run:
         name: build basic setup
         command: bash setup.sh
+        no_output_timeout: 3h
       -run:
         name: get android setup
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup2.sh  
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup2.sh
+        no_output_timeout: 3h
       -run:
         name: build android setup
         command: bash setup2.sh
+        no_output_timeout: 3h
       -run:
         name: get android sources 
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh
+        no_output_timeout: 3h
       -run:
         name: lunch android source
         command: bash lunch.sh
+        no_output_timeout: 3h
       -run:
-        name: 
-           no_output_timeout: 120m
+        name: bacon
         command: make bacon
+        no_output_timeout: 6h
       -run:
         name: get copy upload script
-        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
+        command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh
+        no_output_timeout: 3h
       -run:
         name: copy output to different location
         command: bash copy.sh
+        no_output_timeout: 3h
            
         
 workflows:
