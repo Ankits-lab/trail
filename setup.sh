@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 mkdir mywork
 cd mywork
 sudo apt-get update
