@@ -2,7 +2,7 @@
 
 echo -e "number of cores?"
 nproc --all
-
+cd mywork
 mkdir hycon 
 cd hycon
 apt install -y curl
