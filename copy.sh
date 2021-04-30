@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd mywork/aosp
 mkdir githubpushable
 cp out/target/product/PL2/HyconOS_*.zip githubpushable
 cd githubpushable
