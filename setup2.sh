@@ -3,7 +3,7 @@
 echo -e "number of cores?"
 nproc --all
 cd mywork
-mkdir asop 
+mkdir aosp 
 cd aosp
 apt install -y curl
 echo "setting time"
