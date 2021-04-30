@@ -2,23 +2,26 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: mrkhan007/aosp:latest 
+      - image: ubuntu:20.04 
    steps:
       - run:
+          name: install wget
+          command: apt install wget
+      - run:
           name: get basic setup
-          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh  
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup.sh
       - run:
           name: build basic setup
           command: bash setup.sh
       - run:
           name: get android setup
-          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup2.sh  
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/setup2.sh
       - run:
           name: build android setup
           command: bash setup2.sh
       - run:
           name: get android sources 
-          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh
       - run:
           name: lunch android source
           command: bash lunch.sh
