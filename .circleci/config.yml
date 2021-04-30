@@ -32,16 +32,16 @@ jobs:
           command: bash device.sh
           no_output_timeout: 8h
       - run:
-          name: get android sources 
+          name: get lunch script 
           command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh
           no_output_timeout: 8h
       - run:
-          name: lunch android source
+          name: lunch device 
           command: bash lunch.sh
           no_output_timeout: 8h
       - run:
           name: get copy upload script
-          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/lunch.sh  
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/copy.sh  
           no_output_timeout: 8h
       - run:
           name: copy output to different location
