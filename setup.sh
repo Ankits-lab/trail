@@ -17,4 +17,8 @@ git clone --recurse-submodules https://github.com/ecdye/zram-config
 cd zram-config
 sudo ./install.bash
 echo check zram enabled or not
+echo check the below details to know
+zramctl
+swapon
+free -h
 echo SETUP DONE STARTING ANDROID SETUP
