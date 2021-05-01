@@ -2,7 +2,8 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: ubuntu:20.04 
+      - image: ubuntu:20.04
+      - memory: 24G
    steps:
       - run:
           name: OS setup 
