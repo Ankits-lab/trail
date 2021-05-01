@@ -38,9 +38,9 @@ chmod a+x ~/bin/repo
 echo "done time sync"
 
 echo "Repo sync"
-repo init -u https://github.com/HyconOS/manifest -b eleven
+repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
 echo "repo init done"
-repo sync -c -j12 --force-sync --no-clone-bundle --no-tags
+repo sync -c --force-sync --no-clone-bundle --no-tags
 echo "just to check everything is synced we do re sync"
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 echo "resync done"
