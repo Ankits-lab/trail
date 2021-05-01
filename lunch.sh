@@ -10,4 +10,8 @@ lunch aosp_PL2-userdebug
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 echo device lunched
+make api-stubs-docs || echo no problem
+make system-api-stubs-docs || echo no problem
+make test-api-stubs-docs || echo no problem
+echo make bacon time
 make bacon
