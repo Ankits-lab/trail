@@ -3,7 +3,6 @@ jobs:
   compile:
    docker:
       - image: ubuntu:20.04
-      - memory: 24G
    steps:
       - run:
           name: OS setup 
