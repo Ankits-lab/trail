@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: ubuntu:20.04
+      - image: ubuntu:20.04 
    steps:
       - run:
           name: OS setup 
@@ -26,7 +26,7 @@ jobs:
       - run:
           name: get device source
           no_output_timeout: 8h
-          command: https://raw.githubusercontent.com/Ankits-lab/trail/main/device.sh
+          command: wget https://raw.githubusercontent.com/Ankits-lab/trail/main/device.sh
       - run:
           name: clone device source
           command: bash device.sh
