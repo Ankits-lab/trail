@@ -22,7 +22,6 @@ sudo: false
 env:
   global:
     - MAKEFLAGS="-j16"
-    - 
 script:
   - bash setup.sh
   - bash setup2.sh
